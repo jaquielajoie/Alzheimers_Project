@@ -8,6 +8,8 @@ The model is 3 convolutional layers with a regressor classifier as output.
 
 THIS CODE NEEDS TO BE REFACTORED. PLEASE DON'T JUDGE IT IS A WORK IN PROGRESS.
 
+#Performance
+
 current results (30 epochs):
 LOSS, MAE, MSE
 [0.05875355005264282, 0.15116603672504425, 0.05875355005264282]
