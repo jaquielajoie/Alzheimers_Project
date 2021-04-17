@@ -1,0 +1,250 @@
+
+Pulling from mp3 directory...
+SAMPLES_PER_TRACK: 1583423.9999999998
+# hops per track 3092.6249999999995
+# of hops -> mfccs w/ 13 coefficients 3093
+SAMPLES_PER_TRACK: 1861632.0
+# hops per track 3636.0
+# of hops -> mfccs w/ 13 coefficients 3637
+SAMPLES_PER_TRACK: 650880.0
+# hops per track 1271.25
+# of hops -> mfccs w/ 13 coefficients 1272
+SAMPLES_PER_TRACK: 4953024.0
+# hops per track 9673.875
+# of hops -> mfccs w/ 13 coefficients 9674
+SAMPLES_PER_TRACK: 2047104.0
+# hops per track 3998.25
+# of hops -> mfccs w/ 13 coefficients 3999
+SAMPLES_PER_TRACK: 755712.0
+# hops per track 1476.0
+# of hops -> mfccs w/ 13 coefficients 1477
+SAMPLES_PER_TRACK: 956736.0
+# hops per track 1868.625
+# of hops -> mfccs w/ 13 coefficients 1869
+SAMPLES_PER_TRACK: 1318464.0
+# hops per track 2575.125
+# of hops -> mfccs w/ 13 coefficients 2576
+SAMPLES_PER_TRACK: 1175040.0
+# hops per track 2295.0
+# of hops -> mfccs w/ 13 coefficients 2296
+SAMPLES_PER_TRACK: 900864.0
+# hops per track 1759.5
+# of hops -> mfccs w/ 13 coefficients 1760
+SAMPLES_PER_TRACK: 1373184.0
+# hops per track 2682.0
+# of hops -> mfccs w/ 13 coefficients 2683
+SAMPLES_PER_TRACK: 1305216.0
+# hops per track 2549.25
+# of hops -> mfccs w/ 13 coefficients 2550
+SAMPLES_PER_TRACK: 2798208.0
+# hops per track 5465.25
+# of hops -> mfccs w/ 13 coefficients 5466
+SAMPLES_PER_TRACK: 1328256.0
+# hops per track 2594.25
+# of hops -> mfccs w/ 13 coefficients 2595
+SAMPLES_PER_TRACK: 819648.0
+# hops per track 1600.875
+# of hops -> mfccs w/ 13 coefficients 1601
+SAMPLES_PER_TRACK: 777024.0000000001
+# hops per track 1517.6250000000002
+# of hops -> mfccs w/ 13 coefficients 1518
+SAMPLES_PER_TRACK: 1291392.0
+# hops per track 2522.25
+# of hops -> mfccs w/ 13 coefficients 2523
+SAMPLES_PER_TRACK: 2264832.0
+# hops per track 4423.5
+# of hops -> mfccs w/ 13 coefficients 4424
+SAMPLES_PER_TRACK: 1076544.0
+# hops per track 2102.625
+# of hops -> mfccs w/ 13 coefficients 2103
+SAMPLES_PER_TRACK: 2165184.0
+# hops per track 4228.875
+# of hops -> mfccs w/ 13 coefficients 4229
+SAMPLES_PER_TRACK: 1084032.0
+# hops per track 2117.25
+# of hops -> mfccs w/ 13 coefficients 2118
+SAMPLES_PER_TRACK: 851904.0
+# hops per track 1663.875
+# of hops -> mfccs w/ 13 coefficients 1664
+SAMPLES_PER_TRACK: 1147392.0
+# hops per track 2241.0
+# of hops -> mfccs w/ 13 coefficients 2242
+SAMPLES_PER_TRACK: 680832.0
+# hops per track 1329.75
+# of hops -> mfccs w/ 13 coefficients 1330
+SAMPLES_PER_TRACK: 1525824.0000000002
+# hops per track 2980.1250000000005
+# of hops -> mfccs w/ 13 coefficients 2981
+SAMPLES_PER_TRACK: 1260288.0
+# hops per track 2461.5
+# of hops -> mfccs w/ 13 coefficients 2462
+SAMPLES_PER_TRACK: 1319616.0
+# hops per track 2577.375
+# of hops -> mfccs w/ 13 coefficients 2578
+SAMPLES_PER_TRACK: 1331712.0
+# hops per track 2601.0
+# of hops -> mfccs w/ 13 coefficients 2602
+SAMPLES_PER_TRACK: 1249344.0
+# hops per track 2440.125
+# of hops -> mfccs w/ 13 coefficients 2441
+SAMPLES_PER_TRACK: 1960704.0
+# hops per track 3829.5
+# of hops -> mfccs w/ 13 coefficients 3830
+SAMPLES_PER_TRACK: 1206720.0
+# hops per track 2356.875
+# of hops -> mfccs w/ 13 coefficients 2357
+SAMPLES_PER_TRACK: 1794240.0
+# hops per track 3504.375
+# of hops -> mfccs w/ 13 coefficients 3505
+SAMPLES_PER_TRACK: 1364544.0
+# hops per track 2665.125
+# of hops -> mfccs w/ 13 coefficients 2666
+SAMPLES_PER_TRACK: 1848960.0
+# hops per track 3611.25
+# of hops -> mfccs w/ 13 coefficients 3612
+SAMPLES_PER_TRACK: 2259072.0
+# hops per track 4412.25
+# of hops -> mfccs w/ 13 coefficients 4413
+SAMPLES_PER_TRACK: 2218176.0
+# hops per track 4332.375
+# of hops -> mfccs w/ 13 coefficients 4333
+SAMPLES_PER_TRACK: 991872.0
+# hops per track 1937.25
+# of hops -> mfccs w/ 13 coefficients 1938
+SAMPLES_PER_TRACK: 1577664.0
+# hops per track 3081.375
+# of hops -> mfccs w/ 13 coefficients 3082
+SAMPLES_PER_TRACK: 1343232.0
+# hops per track 2623.5
+# of hops -> mfccs w/ 13 coefficients 2624
+SAMPLES_PER_TRACK: 753984.0
+# hops per track 1472.625
+# of hops -> mfccs w/ 13 coefficients 1473
+SAMPLES_PER_TRACK: 1247616.0
+# hops per track 2436.75
+# of hops -> mfccs w/ 13 coefficients 2437
+SAMPLES_PER_TRACK: 1193472.0
+# hops per track 2331.0
+# of hops -> mfccs w/ 13 coefficients 2332
+SAMPLES_PER_TRACK: 1354176.0
+# hops per track 2644.875
+# of hops -> mfccs w/ 13 coefficients 2645
+SAMPLES_PER_TRACK: 1152576.0
+# hops per track 2251.125
+# of hops -> mfccs w/ 13 coefficients 2252
+SAMPLES_PER_TRACK: 734976.0
+# hops per track 1435.5
+# of hops -> mfccs w/ 13 coefficients 1436
+SAMPLES_PER_TRACK: 1173888.0
+# hops per track 2292.75
+# of hops -> mfccs w/ 13 coefficients 2293
+SAMPLES_PER_TRACK: 1824192.0
+# hops per track 3562.875
+# of hops -> mfccs w/ 13 coefficients 3563
+SAMPLES_PER_TRACK: 1316736.0
+# hops per track 2571.75
+# of hops -> mfccs w/ 13 coefficients 2572
+SAMPLES_PER_TRACK: 1573056.0
+# hops per track 3072.375
+# of hops -> mfccs w/ 13 coefficients 3073
+SAMPLES_PER_TRACK: 1203840.0
+# hops per track 2351.25
+# of hops -> mfccs w/ 13 coefficients 2352
+SAMPLES_PER_TRACK: 2992896.0
+# hops per track 5845.5
+# of hops -> mfccs w/ 13 coefficients 5846
+SAMPLES_PER_TRACK: 1075392.0
+# hops per track 2100.375
+# of hops -> mfccs w/ 13 coefficients 2101
+SAMPLES_PER_TRACK: 1640448.0
+# hops per track 3204.0
+# of hops -> mfccs w/ 13 coefficients 3205
+SAMPLES_PER_TRACK: 1168704.0
+# hops per track 2282.625
+# of hops -> mfccs w/ 13 coefficients 2283
+SAMPLES_PER_TRACK: 3106944.0000000005
+# hops per track 6068.250000000001
+# of hops -> mfccs w/ 13 coefficients 6069
+SAMPLES_PER_TRACK: 4216320.0
+# hops per track 8235.0
+# of hops -> mfccs w/ 13 coefficients 8236
+SAMPLES_PER_TRACK: 1486080.0
+# hops per track 2902.5
+# of hops -> mfccs w/ 13 coefficients 2903
+SAMPLES_PER_TRACK: 1609919.9999999998
+# hops per track 3144.3749999999995
+# of hops -> mfccs w/ 13 coefficients 3145
+SAMPLES_PER_TRACK: 4841280.0
+# hops per track 9455.625
+# of hops -> mfccs w/ 13 coefficients 9456
+SAMPLES_PER_TRACK: 717696.0
+# hops per track 1401.75
+# of hops -> mfccs w/ 13 coefficients 1402
+SAMPLES_PER_TRACK: 698688.0
+# hops per track 1364.625
+# of hops -> mfccs w/ 13 coefficients 1365
+SAMPLES_PER_TRACK: 1844351.9999999998
+# hops per track 3602.2499999999995
+# of hops -> mfccs w/ 13 coefficients 3603
+SAMPLES_PER_TRACK: 1549440.0
+# hops per track 3026.25
+# of hops -> mfccs w/ 13 coefficients 3027
+SAMPLES_PER_TRACK: 1237824.0
+# hops per track 2417.625
+# of hops -> mfccs w/ 13 coefficients 2418
+SAMPLES_PER_TRACK: 1699200.0
+# hops per track 3318.75
+# of hops -> mfccs w/ 13 coefficients 3319
+SAMPLES_PER_TRACK: 1815552.0000000002
+# hops per track 3546.0000000000005
+# of hops -> mfccs w/ 13 coefficients 3547
+SAMPLES_PER_TRACK: 1613376.0
+# hops per track 3151.125
+# of hops -> mfccs w/ 13 coefficients 3152
+SAMPLES_PER_TRACK: 1919232.0000000002
+# hops per track 3748.5000000000005
+# of hops -> mfccs w/ 13 coefficients 3749
+SAMPLES_PER_TRACK: 1218816.0
+# hops per track 2380.5
+# of hops -> mfccs w/ 13 coefficients 2381
+SAMPLES_PER_TRACK: 2972160.0
+# hops per track 5805.0
+# of hops -> mfccs w/ 13 coefficients 5806
+SAMPLES_PER_TRACK: 2904768.0
+# hops per track 5673.375
+# of hops -> mfccs w/ 13 coefficients 5674
+SAMPLES_PER_TRACK: 1858176.0
+# hops per track 3629.25
+# of hops -> mfccs w/ 13 coefficients 3630
+SAMPLES_PER_TRACK: 1805760.0
+# hops per track 3526.875
+# of hops -> mfccs w/ 13 coefficients 3527
+SAMPLES_PER_TRACK: 2793600.0
+# hops per track 5456.25
+# of hops -> mfccs w/ 13 coefficients 5457
+SAMPLES_PER_TRACK: 1793664.0
+# hops per track 3503.25
+# of hops -> mfccs w/ 13 coefficients 3504
+SAMPLES_PER_TRACK: 2118528.0
+# hops per track 4137.75
+# of hops -> mfccs w/ 13 coefficients 4138
+SAMPLES_PER_TRACK: 1820160.0
+# hops per track 3555.0
+# of hops -> mfccs w/ 13 coefficients 3556
+SAMPLES_PER_TRACK: 1646784.0
+# hops per track 3216.375
+# of hops -> mfccs w/ 13 coefficients 3217
+
+func: analyze_mp3s took 17.818401297 seconds to run.
+78 mp3 files analyzed.
+0 audio features per file (per frame).
+
+
+AudioProcessor.run(): took 25.150985405 seconds to run.
+
+            process_large_files: False
+            analyze_mp3s: True
+            max_file_count: None
+            graphing: False
+            play_audio: False
+            

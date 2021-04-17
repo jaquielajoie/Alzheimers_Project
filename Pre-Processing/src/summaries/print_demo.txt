@@ -1,0 +1,39 @@
+
+
+Pulling from mp3 directory...
+
+file_path: /Users/jackie/Documents/AD_CGU/Pre-Processing/test_data/mp3/S048.mp3
+
+Audio Feature Shapes ( # features, # of frames sized 2048 samples):
+
+                    mfccs: (13, 6184)
+                    multi_mfccs: (39, 6184)
+                    chroma: (12, 6184)
+                    stft_db: (1025, 6184)
+                    mel_spectrogram_db: (128, 6184)
+                    fourier_tempogram: (193, 6185)
+                    onset_strength: (6184,) ----> (1D list of time values)
+                    onset_detect: (285,) ----> (1D list of time values)
+                    tempogram: (193, 6185)
+                    ac_tempogram: (384, 6184)
+                    zero_crossings: (1, 6184)
+                    spec_centroid: (1, 6184)
+                    
+
+Starting S048.mp3 audio player thread.
+
+Finished playing S048.mp3.
+
+func: analyze_mp3s took 125.90943538399999 seconds to run.
+1 mp3 files analyzed.
+1976 audio features per file (per frame).
+
+
+AudioProcessor.run(): took 125.958635063 seconds to run.
+
+            process_large_files: False
+            analyze_mp3s: True
+            max_file_count: 1
+            graphing: True
+            play_audio: True
+            

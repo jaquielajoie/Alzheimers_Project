@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Other files
+
+unlabeled_data/
+test_data/
