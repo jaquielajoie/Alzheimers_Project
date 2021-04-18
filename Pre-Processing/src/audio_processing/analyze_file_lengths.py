@@ -31,7 +31,7 @@ for i in data["labels"]:
         control += 1
 
 print(f'Dementia samples: {dementia}\nControl samples: {control}')
-
+####
 """
 m = 0
 mn = 5000
