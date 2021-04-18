@@ -81,119 +81,103 @@ class AudioProcessor:
     * Analyze MP3s and export MFCCs & labeling to ./json/data.json
     *
     """
-
-
-    def get_features_from_file_path(self, training_labeler, file_path, filename, mms_df, i, f):
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore")
-            x, Fs = librosa.load(file_path, sr=None)
-
+    def add_file_features_to_labeler(self, training_labeler, x, Fs, mms, file_path, i, f):
 
         file_dur = librosa.get_duration(y=x, sr=Fs)
 
-        print(f'Audio Length: {librosa.get_duration(y=x, sr=Fs)}')
+        print(f'\n============\nAudio Length: {librosa.get_duration(y=x, sr=Fs)}\n============\n')
         self.file_lengths.append((librosa.get_duration(y=x, sr=Fs), str(file_path)))
-
-
 
         n_mfcc = 13
         n_fft = 2048
         hop_length = 512
 
-        duration = 30 #seconds
 
-        base_sample_count = 1323000
-        sample_factor = 1
-        num_segments = 1
 
-        if file_dur < 2 * base_sample_count:
-            sample_factor = 1
-            num_segments = 1
-        elif file_dur < 3 * base_sample_count:
-            sample_factor = 2
-            num_segments = 2
-        elif file_dur < 4 * base_sample_count:
-            sample_factor = 3
-            num_segments = 3
-        else:
-            print(f'\n\nSPECIAL AUDIO LENGTH: {file_dur}\n\n')
+        duration = 35 #seconds, all files shorter are dropped
+        SAMPLES_PER_SEGMENT = Fs * duration
+
+        segments_per_file = math.floor(file_dur/duration)
+
+        #num_samples_per_segment = int(SAMPLES_PER_TRACK / num_segments)
+        expected_num_mfcc_vec_p_seg = math.ceil(SAMPLES_PER_SEGMENT / hop_length)
 
 
 
-        #li.get_duration(y=x, sr=Fs, n_fft=n_fft, hop_length=hop_length, center=True)
-        SAMPLES_PER_TRACK = Fs * duration
+        for s in range(segments_per_file):
+            start_sample = SAMPLES_PER_SEGMENT * s #s=0 -> 0
+            finish_sample = start_sample + SAMPLES_PER_SEGMENT #s=0 -> num_samples_per_segment
 
-        num_samples_per_segment = int(SAMPLES_PER_TRACK / num_segments)
-        expected_num_mfcc_vec_p_seg = math.ceil(num_samples_per_segment / hop_length)
+            print(f'Start sample: {start_sample}\nFinish sample: {finish_sample}')
 
-        fn_reg = re.compile('([0-9]+)')
-        file_num = int(fn_reg.findall(filename)[0])
+            #if len(x[start_sample:finish_sample]) == base_sample_count * sample_factor: #30 seconds #1984500:#396900: #need the same shape...
+
+            mfcc = librosa.feature.mfcc(
+                                    x[start_sample:finish_sample],
+                                    sr=Fs,
+                                    n_fft=n_fft,
+                                    n_mfcc=n_mfcc,
+                                    hop_length=hop_length
+                                )
+
+            chroma_stft = librosa.feature.chroma_stft(x[start_sample:finish_sample],
+                                    sr=Fs,
+                                    n_chroma=12,
+                                    n_fft=n_fft,
+                                    hop_length=hop_length
+                                )
+
+            mfcc = mfcc.T
+            chroma_stft = chroma_stft.T
+
+            feat = np.concatenate((mfcc, chroma_stft), axis=1)
+            #print(f'\nSample Factor: {sample_factor}')
+            print(f'\n\nFs: {Fs}\nfeat.shape: {feat.shape}\nlen(feat): {len(feat)}\n expected_num_mfcc_vec_p_seg: {expected_num_mfcc_vec_p_seg}')
+            #print(f'{mfcc.shape}\n{chroma_stft.shape}')
+
+            #print(mfcc)
+
+            if len(feat) == expected_num_mfcc_vec_p_seg:
+                feat = feat.tolist()
+
+                print(f'\nACCEPTED\n[LABEL={i-1}, MMS={mms[1]}]\n\n----------------\n')
+                training_labeler.add_information(label=(i-1), feat=feat, file_name=f, extra_info=None, mms=mms)
+
+    def get_features_from_file_path(self, training_labeler, file_path, filename, i, f, mms_df=None):
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            x, Fs = librosa.load(file_path, sr=16000)
+
         #extra_info = ex_df[ex_df['id']==file_num]
-        if mms_df:
+        if mms_df is not None:
+            fn_reg = re.compile('([0-9]+)')
+            file_num = int(fn_reg.findall(filename)[0])
+
             mms = mms_df[mms_df['id']==file_num]
             mms = np.squeeze(mms)
             mms = mms.values.tolist()
         else:
             mms = [-1, -1] #for training labeler
-        #print(f'file_num: {file_num}: mms: {mms}')
-        #print(extra_info)
 
-        #feature_extractor = FeatureExtractor(x=x, Fs=Fs, n_fft=n_fft, hop_length=hop_length, num_mfcc=num_mfcc)
-        #any other interesting features go here...
+        self.add_file_features_to_labeler(training_labeler=training_labeler, x=x, Fs=Fs, mms=mms, file_path=file_path, i=i, f=f)
 
-        for s in range(num_segments):
-            start_sample = num_samples_per_segment * s #s=0 -> 0
-            finish_sample = start_sample + num_samples_per_segment #s=0 -> num_samples_per_segment
+    def parse_metadata(self, run=True):
+        if run:
+            pitt_df = pd.read_csv(os.path.abspath("../test_data/Pitt-data.csv"))
+            cols = ["id","entryage","onsetage","sex"]
+            mms_cols = ["id","mms"]
+            ex_df = pitt_df[cols]
+            mms_df = pitt_df[mms_cols]
+            return mms_df, ex_df
+        else:
+            return None, None
 
-
-            if len(x[start_sample:finish_sample]) == base_sample_count * sample_factor: #30 seconds #1984500:#396900: #need the same shape...
-
-                mfcc = librosa.feature.mfcc(
-                                        x[start_sample:finish_sample],
-                                        sr=Fs,
-                                        n_fft=n_fft,
-                                        n_mfcc=n_mfcc,
-                                        hop_length=hop_length
-                                    )
-
-                chroma_stft = librosa.feature.chroma_stft(x[start_sample:finish_sample],
-                                        sr=Fs,
-                                        n_chroma=12,
-                                        n_fft=n_fft,
-                                        hop_length=hop_length
-                                    )
-
-                mfcc = mfcc.T
-                chroma_stft = chroma_stft.T
-
-                feat = np.concatenate((mfcc, chroma_stft), axis=1)
-                print(f'\nSample Factor: {sample_factor}')
-                print(f'\nfeat.shape: {feat.shape}')
-                #print(f'{mfcc.shape}\n{chroma_stft.shape}')
-
-                #print(mfcc)
-
-                if len(feat) == expected_num_mfcc_vec_p_seg:
-                    feat = feat.tolist()
-
-
-
-                    print(f'feat ACCEPTED\n')
-                    training_labeler.add_information(label=(i-1), feat=feat, file_name=f, extra_info=None, mms=mms)
-
-
-    def analyze_mp3s(self, cmd_print=False, max_file_count=None, play_audio=False, audio_length=5):
+    def analyze_mp3s(self, cmd_print=False, max_file_count=None, play_audio=False, audio_length=5, parse_metadata=True):
         start_time = time.perf_counter()
         file_count = 0
         features_per_file = 0
 
-        pitt_df = pd.read_csv(os.path.abspath("../test_data/Pitt-data.csv"))
-        cols = ["id","entryage","onsetage","sex"]
-        mms_cols = ["id","mms"]
-        ex_df = pitt_df[cols]
-        mms_df = pitt_df[mms_cols]
-
-        #print(mms_scores.head)
+        mms_df, ex_df = self.parse_metadata(run=parse_metadata)
 
         training_labeler = TrainingLabeler(os.path.abspath("audio_processing/json/data.json"))
 
@@ -202,9 +186,6 @@ class AudioProcessor:
             for i, (dirpath, dirnames, filenames) in enumerate(os.walk(self.mp3s)):
                 label = dirpath.split("/")[-1]
                 training_labeler.add_information(mapping=label)
-
-
-
                 print(f'\nPulling from {label} directory...')
                 for f in filenames[:max_file_count]:
                     filename, extension = os.path.splitext(f)
@@ -214,6 +195,7 @@ class AudioProcessor:
                         file_path = os.path.join(dirpath, f)
 
                         self.get_features_from_file_path(training_labeler=training_labeler, file_path=file_path, filename=filename, mms_df=mms_df, i=i, f=f)
+
                         #Librosa throws an audioread UserWarning - supressed below
                         if cmd_print:
                             if play_audio:
@@ -234,6 +216,7 @@ class AudioProcessor:
             print(f'\nfunc: analyze_mp3s took {end_time - start_time} seconds to run.')
             print(f'{file_count} mp3 files analyzed.')
             print(f'{features_per_file} audio features per file (per frame).')
+            print(f'Total number of entries: {training_labeler.total_entries}')
 
             training_labeler.save()
 

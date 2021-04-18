@@ -27,6 +27,15 @@ class Modeler:
             #mms = np.array(data["mms"])
             labels = np.array(data["labels"])
 
+            d = 0
+            c = 0
+            for label in data['labels']:
+                if label == 0:
+                    d += 1
+                if label == 1:
+                    c += 1
+            print(f'Dementia: {d} Control: {c}')
+
             mms = np.array(data["mms"])
             mms = normalize_target(mms)
 

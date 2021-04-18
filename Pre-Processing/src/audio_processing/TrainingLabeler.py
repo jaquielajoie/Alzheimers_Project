@@ -5,6 +5,7 @@ import re
 
 class TrainingLabeler:
     def __init__(self, save_path):
+        self.total_entries = 0
         self.data = {
             "mapping": [],
             "mms": [],
@@ -28,6 +29,7 @@ class TrainingLabeler:
             self.data["labels"].append(label)
         if feat:
             self.data["features"].append(feat)
+            self.total_entries += 1
         if file_name:
             self.data["files"].append(file_name)
             print(f'Extracting at {file_name}...')
