@@ -1,3 +1,6 @@
+# Models made using PITT Corpus 
+https://dementia.talkbank.org/access/English/Pitt.html
+
 # Alzheimers_Project
 This code is used to transform the PITT data set (dementia) into json files to pipe into a keras model.
 
