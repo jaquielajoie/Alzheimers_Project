@@ -19,3 +19,8 @@ LOSS, MAE, MSE
 - this is from a notable figure...
 
 Test Predictions: [[0.24143995]]
+
+# End goal
+
+- Put this on a smart phone.
+- write an actual README
