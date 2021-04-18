@@ -2,6 +2,7 @@ import os
 from file_lengths import FileLengths
 import pandas as pd
 import numpy as np
+import json
 
 #path = os.path.abspath('../file_lengths.json')
 fl = FileLengths()
@@ -16,6 +17,21 @@ df = df.astype(np.float)
 hist, bin_edges = np.histogram(df, bins=20, range=(0,40))
 print(hist)
 print(bin_edges)
+
+
+with open(os.path.abspath('json/data.json'), "r") as fp:
+    data = json.load(fp)
+
+dementia = 0
+control = 0
+for i in data["labels"]:
+    if i == 0:
+        dementia += 1
+    if i == 1:
+        control += 1
+
+print(f'Dementia samples: {dementia}\nControl samples: {control}')
+
 """
 m = 0
 mn = 5000

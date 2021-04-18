@@ -183,7 +183,7 @@ class Modeler:
             model.fit(inputs_train, targets_train,
                     validation_data=(inputs_validation, targets_validation),
                     epochs=30,
-                    batch_size=4
+                    batch_size=16
                 )
 
             model.summary()
@@ -221,7 +221,7 @@ class Modeler:
             model.fit(inputs_train, targets_train,
                     validation_data=(inputs_validation, targets_validation),
                     epochs=30,
-                    batch_size=4
+                    batch_size=16
                 )
 
             model.summary()

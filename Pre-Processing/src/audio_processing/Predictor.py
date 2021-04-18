@@ -15,11 +15,11 @@ import pandas as pd
 #Accuracy on test set is [0.05875355005264282, 0.15116603672504425, 0.05875355005264282])
 
 class Predictor:
-    def __init__(self, model_path, file_path):
+    def __init__(self, model_path, file_path, f, filename):
         self.model_path = model_path
         self.file_path = file_path
-        self.filename = 'predict_4.mp3'
-        self.f = 'predict_4'
+        self.filename = filename
+        self.f = f
 
     def load_data(self, data_path):
         with open(data_path, "r") as fp:
@@ -41,7 +41,7 @@ class Predictor:
     def pre_process(self):
         processor = AudioProcessor(data_path='')
         training_labeler = TrainingLabeler(os.path.abspath("audio_processing/json/predict.json"))
-        processor.get_features_from_file_path(training_labeler=training_labeler, file_path=self.file_path, filename=self.filename, mms_df=None, f=self.f, i=1)
+        processor.get_features_from_file_path(training_labeler=training_labeler, file_path=self.file_path, filename=self.f, mms_df=None, f=self.filename, i=1)
         #just use this to pull one file
         training_labeler.save()
 #Test Predictions: [[0.24143995]]

@@ -112,8 +112,10 @@ if __name__ == "__main__":
 
     if predict_outcome:
         MODEL_PATH = os.path.abspath("../models/classifier.h5")
-        PREDICT_FILE_PATH = os.path.abspath("../unlabeled_data/predict_4.mp3")
-        predictor = Predictor(model_path=MODEL_PATH, file_path=PREDICT_FILE_PATH)
+        f = 'predict_6.mp3'
+        filename, extension = os.path.splitext(f)
+        PREDICT_FILE_PATH = os.path.abspath(f"../unlabeled_data/{f}")
+        predictor = Predictor(model_path=MODEL_PATH, file_path=PREDICT_FILE_PATH, f=f, filename=filename)
 
         start_time = time.perf_counter()
         predictor.predict()

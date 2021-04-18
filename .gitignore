@@ -132,3 +132,5 @@ dmypy.json
 
 unlabeled_data/
 test_data/
+json/
+*.json
