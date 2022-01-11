@@ -18,12 +18,6 @@ current results (30 epochs):
 LOSS, MAE, MSE
 [0.05875355005264282, 0.15116603672504425, 0.05875355005264282]
 
-# Example Performance
-
-- this is from a notable figure...
-
-Test Predictions: [[0.24143995]]
-
 # End goal
 
 - Put this on a smart phone.
